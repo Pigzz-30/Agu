@@ -24,19 +24,8 @@ function Save-Status {
 try {
     $changes = git status --porcelain
     if (-not $changes) {
-        Save-Status @{
-            status = "no_changes"
-            label = $Label
-            date = $Date
-            message = "No changes to commit."
-        }
         exit 0
     }
-
-    git add --all
-
-    $commitMessage = "Daily A-share archive $Date $Label"
-    git commit -m $commitMessage
 
     $remote = git remote get-url origin 2>$null
     if (-not $remote) {
@@ -47,6 +36,14 @@ try {
             message = "Committed locally, but no git remote named origin is configured."
             next_step = "Run: git remote add origin <repo-url>"
         }
+    }
+
+    git add --all
+
+    $commitMessage = "Daily A-share archive $Date $Label"
+    git commit -m $commitMessage
+
+    if (-not $remote) {
         exit 0
     }
 
@@ -64,6 +61,9 @@ try {
         branch = $branch
         message = "Committed and pushed successfully."
     }
+    git add --all
+    git commit -m "Record git publish status $Date $Label"
+    git push -u origin $branch
 }
 catch {
     Save-Status @{
