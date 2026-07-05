@@ -4,9 +4,17 @@
 
 ## 手机查看
 
-GitHub Pages 展示页：
+GitHub Pages 展示页，启用后可访问：
 
 https://pigzz-30.github.io/Agu/
+
+首次启用步骤：
+
+1. 打开仓库 `Settings`
+2. 进入 `Pages`
+3. `Build and deployment` 选择 `Deploy from a branch`
+4. `Branch` 选择 `master`，目录选择 `/ (root)`
+5. 保存后等待 1-2 分钟
 
 ## 输出目录
 
