@@ -2,6 +2,12 @@
 
 本仓库用于归档自动生成的 A 股每日复盘与开盘前消息简报。
 
+## 手机查看
+
+GitHub Pages 展示页：
+
+https://pigzz-30.github.io/Agu/
+
 ## 输出目录
 
 - `每日复盘/YYYY-MM-DD/`
