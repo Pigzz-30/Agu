@@ -1,0 +1,7 @@
+{
+  "time": "2026-07-05",
+  "status": "failed",
+  "pushplus_code": 905,
+  "message": "账户未进行实名认证，未实名认证用户无法发送消息。",
+  "next_step": "完成 PushPlus 实名认证后，自动任务无需改动，会继续使用本地 .secrets/pushplus_token.txt 推送摘要。"
+}
