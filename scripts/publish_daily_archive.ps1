@@ -8,7 +8,8 @@ $ErrorActionPreference = "Stop"
 $repoRoot = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $repoRoot
 
-$dayDir = Join-Path $repoRoot ("每日复盘\" + $Date)
+$reviewDirName = [string]([char]0x6BCF) + [string]([char]0x65E5) + [string]([char]0x590D) + [string]([char]0x76D8)
+$dayDir = Join-Path $repoRoot (Join-Path $reviewDirName $Date)
 if (-not (Test-Path -LiteralPath $dayDir)) {
     New-Item -ItemType Directory -Path $dayDir | Out-Null
 }
